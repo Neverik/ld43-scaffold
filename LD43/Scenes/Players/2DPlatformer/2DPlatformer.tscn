@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Players/2DPlatformer/2DPlatformer.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/icon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Player" type="KinematicBody2D"]
+
+position = Vector2( 16, 16 )
+scale = Vector2( 1.5, 1.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+gravity_acceleration = Vector2( 0, 1 )
+strong_gravity_acceleration = Vector2( 0, 1.2 )
+jump_force = Vector2( 0, -10 )
+jump_gravity_acceleration = Vector2( 0, 0.04 )
+move_force = Vector2( 300, 0 )
+shift_move_force = Vector2( 450, 0 )
+max_jump_time = 0.7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+scale = Vector2( 2.96154, 2.96154 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+texture = ExtResource( 2 )
+
+

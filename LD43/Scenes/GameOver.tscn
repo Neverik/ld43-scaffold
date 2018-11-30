@@ -1,0 +1,110 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/roboto/Roboto-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/roboto/Roboto-Light.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/LoadButton.gd" type="Script" id=3]
+[ext_resource path="res://Music/menu.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 150
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 1 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 100
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[node name="Node2D" type="Node2D" index="0"]
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 896.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.885864, 0.887037, 0.960938, 1 )
+
+[node name="Label" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 64.0
+margin_right = 896.0
+margin_bottom = 320.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.118225, 0.119552, 0.203125, 1 )
+custom_colors/font_color_shadow = Color( 0.129807, 0.153338, 0.183594, 1 )
+text = "Game over"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Button" type="Button" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 128.0
+margin_top = 384.0
+margin_right = 768.0
+margin_bottom = 512.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Try again"
+flat = false
+align = 1
+script = ExtResource( 3 )
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+_sections_unfolded = [ "Pause" ]
+
+[connection signal="pressed" from="Button" to="Button" method="click"]
+
+
