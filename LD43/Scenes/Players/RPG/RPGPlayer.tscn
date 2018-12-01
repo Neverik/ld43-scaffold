@@ -10,12 +10,13 @@ extents = Vector2( 10, 10 )
 
 [node name="Player" type="KinematicBody2D"]
 
+scale = Vector2( 1.5, 1.5 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-speed = 200
+speed = 500
 clicker = true
 do_shoot = false
 bullet = "res://Scenes/Bullet.tscn"

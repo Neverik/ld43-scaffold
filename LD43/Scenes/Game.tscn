@@ -18,6 +18,7 @@ bus = "Master"
 [node name="Player" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 384, 320 )
+_sections_unfolded = [ "Pickable" ]
 clicker = false
 
 [node name="Pause" parent="." index="2" instance=ExtResource( 3 )]
